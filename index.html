@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lakshya Computer Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/fevicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="nav-brand">
+        <img src="img/logo.png" alt="Lakshya Logo" class="logo-img" />
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownBtn">Course <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Course.html" class="dropdown-item">Basic Course</a>
+            <a href="Course.html" class="dropdown-item">Intermediate Course</a>
+            <a href="Course.html" class="dropdown-item">Advance Course</a>
+          </div>
+        </div>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="Notebook.html" class="nav-link">Notebook</a>
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="animated-theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container grid-2" style="align-items: center;">
+      <div class="hero-content reveal">
+        <h1>Lakshya Computer <span class="animated-text">Institute</span></h1>
+        <p class="hero-subtitle">Transform Your Future With Technology</p>
+        <div class="hero-buttons">
+          <a href="Course.html" class="btn btn-primary">Explore Courses</a>
+          <a href="tel:+919044666636" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Enquiry</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?fit=crop&w=1000&q=80"
+          alt="Students Learning">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section (New UI) -->
+  <section class="stats-section">
+    <div class="container grid-3 reveal">
+      <div class="stat-item">
+        <div class="stat-number">5k+</div>
+        <div class="stat-label">Students Enrolled</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Professional Courses</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="section-padding" style="background-color: var(--bg-color);">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">Our Popular Courses</h2>
+        <p class="section-subtitle">Discover our highly demanded courses for your career growth.</p>
+      </div>
+
+      <div class="grid-3 mb-5">
+        <div class="card course-card reveal">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="ADCA"></div>
+          <h3 class="card-title">ADCA</h3>
+          <p class="card-desc">Advance Diploma in Computer Application, practical training + projects.</p>
+        </div>
+        <div class="card course-card reveal" style="transition-delay: 0.1s;">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="ADCA Plus">
+          </div>
+          <h3 class="card-title">ADCA Plus</h3>
+          <p class="card-desc">All-in-one advanced computer diploma with latest software and tools.</p>
+        </div>
+        <div class="card course-card reveal" style="transition-delay: 0.2s;">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="DCA"></div>
+          <h3 class="card-title">DCA</h3>
+          <p class="card-desc">Diploma in Computer Application – Core IT skills for all students.</p>
+        </div>
+        <div class="card course-card reveal">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="TallyPrime">
+          </div>
+          <h3 class="card-title">TallyPrime</h3>
+          <p class="card-desc">Accountancy & finance software, GST & payroll taught practically.</p>
+        </div>
+        <div class="card course-card reveal" style="transition-delay: 0.1s;">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="O-Level"></div>
+          <h3 class="card-title">O-Level</h3>
+          <p class="card-desc">Government certified computer course (NIELIT) for careers & jobs.</p>
+        </div>
+        <div class="card course-card reveal" style="transition-delay: 0.2s;">
+          <div class="card-icon"><img src="https://cdn-icons-png.flaticon.com/128/5000/5000269.png" alt="CCC"></div>
+          <h3 class="card-title">CCC</h3>
+          <p class="card-desc">Course on Computer Concepts – basic digital literacy for everyone.</p>
+        </div>
+      </div>
+
+      <div class="text-center reveal">
+        <a href="Course.html" class="btn btn-primary">Explore All Courses <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notebooks Section -->
+  <section class="section-padding" style="background-color: var(--surface-color);">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">Student Notebooks</h2>
+        <p class="section-subtitle">Access study materials and practical guides.</p>
+      </div>
+
+      <div class="grid-4 mb-5">
+        <div class="card notebook-card reveal">
+          <img src="https://cdn-icons-png.flaticon.com/128/3749/3749784.png" alt="Fundamentals" class="card-icon">
+          <h4 class="card-title">Computer Fundamentals</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.1s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/888/888883.png" alt="Ms Word" class="card-icon">
+          <h4 class="card-title">Ms Word</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.2s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/732/732220.png" alt="MS Excel" class="card-icon">
+          <h4 class="card-title">MS Excel</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.3s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/888/888874.png" alt="PowerPoint" class="card-icon">
+          <h4 class="card-title">MS PowerPoint</h4>
+        </div>
+        <!-- Row 2 -->
+        <div class="card notebook-card reveal">
+          <img src="https://cdn-icons-png.flaticon.com/128/364/364089.png" alt="Internet" class="card-icon">
+          <h4 class="card-title">Internet</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.1s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/5968/5968520.png" alt="Photoshop" class="card-icon">
+          <h4 class="card-title">Photoshop</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.2s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/17471/17471642.png" alt="CorelDraw" class="card-icon">
+          <h4 class="card-title">CorelDraw</h4>
+        </div>
+        <div class="card notebook-card reveal" style="transition-delay: 0.3s;">
+          <img src="https://cdn-icons-png.flaticon.com/128/3098/3098090.png" alt="Python" class="card-icon">
+          <h4 class="card-title">Python</h4>
+        </div>
+      </div>
+
+      <div class="text-center reveal">
+        <a href="Notebook.html" class="btn btn-outline" target="_blank">Explore Notebooks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online Exam Section -->
+  <section class="section-padding" style="background-color: var(--bg-color);">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">Online Exam</h2>
+        <p class="section-subtitle">Test your skills and knowledge with our online tests.</p>
+      </div>
+
+      <div class="grid-4 mb-5">
+        <div class="card exam-card reveal">
+          <i class="fas fa-laptop-code card-icon"></i>
+          <h4 class="card-title mb-3">Computer Fundamentals</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.1s;">
+          <i class="fas fa-file-word card-icon"></i>
+          <h4 class="card-title mb-3">Ms Word</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.2s;">
+          <i class="fas fa-file-excel card-icon"></i>
+          <h4 class="card-title mb-3">MS Excel</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.3s;">
+          <i class="fas fa-file-powerpoint card-icon"></i>
+          <h4 class="card-title mb-3">MS PowerPoint</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <!-- Row 2 -->
+        <div class="card exam-card reveal">
+          <i class="fas fa-globe card-icon"></i>
+          <h4 class="card-title mb-3">Internet</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.1s;">
+          <i class="fas fa-image card-icon"></i>
+          <h4 class="card-title mb-3">Photoshop</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.2s;">
+          <i class="fas fa-pen-nib card-icon"></i>
+          <h4 class="card-title mb-3">CorelDraw</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.3s;">
+          <i class="fab fa-python card-icon"></i>
+          <h4 class="card-title mb-3">Python</h4>
+          <a href="exam.html" class="btn btn-primary">Start Test</a>
+        </div>
+      </div>
+
+      <div class="text-center reveal">
+        <a href="exam.html" class="btn btn-outline">Explore Tests</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact -->
+  <section class="section-padding" style="background-color: var(--surface-color);">
+    <div class="container grid-2">
+      <div class="map-container reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.3464577233767!2d82.12186277530004!3d26.412293976949005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a70b5b1c61047%3A0x3f7963df9a05175!2sLakshya%20Computer%20Institute!5e0!3m2!1sen!2sin!4v1759248676614!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-card reveal" style="transition-delay: 0.2s;">
+        <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 24px;">Contact Us</h3>
+        <form id="contactForm" novalidate onsubmit="return false;">
+          <div class="floating-group">
+            <input id="name" name="name" type="text" class="form-control" required placeholder=" " />
+            <label for="name" class="floating-label">Name</label>
+          </div>
+          <div class="floating-group">
+            <input id="email" name="email" type="email" class="form-control" required placeholder=" " />
+            <label for="email" class="floating-label">Email</label>
+          </div>
+          <div class="floating-group" style="margin-bottom: 32px;">
+            <textarea id="message" name="message" class="form-control" required placeholder=" "
+              style="min-height: 120px; resize: vertical; padding-top: 24px;"></textarea>
+            <label for="message" class="floating-label">Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;"
+            onclick="alert('Thank you for contacting us. We will respond soon.')">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Lakshya Computer Institute</h3>
+        <p>Empowering Digital India. Providing quality education and practical training to build successful software and
+          IT careers.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/lakshyainstitute" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Course.html">Courses</a></li>
+          <li><a href="Notebook.html">Notebooks</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul style="color: var(--text-secondary);">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="fas fa-map-marker-alt"
+              style="margin-top: 4px; color: var(--accent-color);"></i> Near SBI Bank Kurebhar Sultanpur Road</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-envelope"
+              style="color: var(--accent-color);"></i> lcisln01@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lakshya Computer Institute. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

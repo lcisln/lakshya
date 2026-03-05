@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MS Excel - Lakshya Computer Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/fevicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .notes-layout {
+      display: flex;
+      gap: 40px;
+      position: relative;
+      align-items: flex-start;
+    }
+
+    /* Sidebar Toggle for Mobile */
+    .sidebar-toggle {
+      display: none;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: var(--border-radius-sm);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Sidebar Styling */
+    .notes-sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background-color: var(--surface-color);
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-color);
+      padding: 24px 0;
+      position: sticky;
+      top: 100px;
+      height: max-content;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      box-shadow: var(--shadow-sm);
+      z-index: 10;
+    }
+
+    .sidebar-header {
+      padding: 0 24px 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-header h3 {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0 12px;
+    }
+
+    .toc-list li a {
+      display: block;
+      padding: 10px 14px;
+      color: var(--text-secondary);
+      border-radius: var(--border-radius-sm);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .toc-list li a:hover {
+      background-color: var(--bg-color);
+      color: var(--accent-color);
+    }
+
+    .toc-list li a.active {
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--accent-color);
+      font-weight: 600;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    /* Reading Content Area */
+    .notes-content {
+      flex: 1;
+      background-color: var(--surface-color);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .notes-content h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--bg-color);
+    }
+
+    .notes-content h2 {
+      font-size: 1.6rem;
+      color: var(--accent-color);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      scroll-margin-top: 100px;
+      /* Offset for sticky nav */
+    }
+
+    .notes-content p,
+    .notes-content ul {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      max-width: 80ch;
+      /* Optimal reading width */
+    }
+
+    .notes-content ul {
+      padding-left: 24px;
+    }
+
+    .notes-content li {
+      margin-bottom: 8px;
+    }
+
+    .notes-content strong {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    @media (max-width: 992px) {
+      .notes-layout {
+        flex-direction: column;
+      }
+
+      .sidebar-toggle {
+        display: flex;
+      }
+
+      .notes-sidebar {
+        width: 100%;
+        position: static;
+        max-height: none;
+        display: none;
+      }
+
+      .notes-sidebar.show {
+        display: block;
+      }
+
+      .notes-content {
+        padding: 30px 20px;
+      }
+
+      .notes-content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Lakshya Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownBtn">Course <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Course.html" class="dropdown-item">Basic Course</a>
+            <a href="Course.html" class="dropdown-item">Intermediate Course</a>
+            <a href="Course.html" class="dropdown-item">Advance Course</a>
+          </div>
+        </div>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="Notebook.html" class="nav-link active">Notebook</a>
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="animated-theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notes Section -->
+  <section class="section-padding" style="background-color: var(--bg-color);">
+    <div class="container">
+
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <span>Table of Contents</span> <i class="fas fa-chevron-down"></i>
+      </button>
+
+      <div class="notes-layout">
+        <!-- Sticky Sidebar -->
+        <aside class="notes-sidebar" id="notesSidebar">
+          <div class="sidebar-header">
+            <h3>Table of Contents</h3>
+          </div>
+          <ul class="toc-list" id="tocList">
+            <li><a href="#intro" class="toc-link">Introduction</a></li>
+            <li><a href="#definition" class="toc-link">Definition of Computer</a></li>
+            <li><a href="#components" class="toc-link">Main Components</a></li>
+            <li><a href="#terms" class="toc-link">Basic Terms</a></li>
+            <li><a href="#uses" class="toc-link">Uses of Computers</a></li>
+            <li><a href="#generations" class="toc-link">Generations</a></li>
+            <li><a href="#points" class="toc-link">Important Points</a></li>
+          </ul>
+
+          <div class="sidebar-header" style="margin-top: 30px;">
+            <h3>Other Notebooks</h3>
+          </div>
+          <ul class="toc-list">
+            <li><a href="Course.html">ADCA Plus</a></li>
+            <li><a href="Course.html">DCA</a></li>
+            <li><a href="Course.html">DFA</a></li>
+            <li><a href="Course.html">ADFA</a></li>
+            <li><a href="Course.html">CCC</a></li>
+            <li><a href="Course.html">O-Level</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="notes-content reveal">
+          <h1>MS Excel</h1>
+
+          <h2 id="intro" class="scroll-target">Introduction</h2>
+          <p>
+            MS Excel is the study of basic structure, operations and functions of computer systems. A
+            computer is an electronic machine that processes data, performs calculations, and solves problems at high
+            speed and accuracy.
+          </p>
+
+          <h2 id="definition" class="scroll-target">Definition of Computer</h2>
+          <p>
+            Computer is an electronic device that accepts data (input), processes it according to instructions
+            (process),
+            and gives the result (output). <br>
+            <strong>IPO Cycle:</strong> Input &rarr; Processing &rarr; Output
+          </p>
+
+          <h2 id="components" class="scroll-target">Main Components of Computer</h2>
+          <ul>
+            <li>Input Unit (e.g. keyboard, mouse, scanner)</li>
+            <li>Output Unit (e.g. monitor, printer, speaker)</li>
+            <li>CPU (Central Processing Unit)</li>
+            <li>Memory Unit (RAM and ROM)</li>
+          </ul>
+
+          <h2 id="terms" class="scroll-target">Basic Terms</h2>
+          <ul>
+            <li><strong>Hardware:</strong> Physical parts - monitor, keyboard, CPU, printer</li>
+            <li><strong>Software:</strong> Programs and applications - Windows, MS Word, Photoshop</li>
+            <li><strong>Data:</strong> Raw facts and figures that are processed by the computer</li>
+            <li><strong>Information:</strong> Processed data which has meaning and is useful</li>
+          </ul>
+
+          <h2 id="uses" class="scroll-target">Uses of Computers</h2>
+          <ul>
+            <li>Education</li>
+            <li>Business</li>
+            <li>Banking</li>
+            <li>Health Care</li>
+            <li>Designing &amp; Animation</li>
+            <li>Research</li>
+          </ul>
+
+          <h2 id="generations" class="scroll-target">Generations of Computers</h2>
+          <p>
+            Computers have evolved in generations: <br>
+            <strong>1st Generation:</strong> Vacuum Tubes <br>
+            <strong>2nd Generation:</strong> Transistors <br>
+            <strong>3rd Generation:</strong> Integrated Circuits <br>
+            <strong>4th Generation:</strong> Microprocessors <br>
+            <strong>5th Generation:</strong> Artificial Intelligence (AI)
+          </p>
+
+          <h2 id="points" class="scroll-target">Important Points</h2>
+          <ul>
+            <li>Computers are reliable, fast and accurate.</li>
+            <li>They do not have intelligence or emotions, only process instructions.</li>
+            <li>Require electricity, input and instructions to operate.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Lakshya Computer Institute</h3>
+        <p>Empowering Digital India. Providing quality education and practical training to build successful software and
+          IT careers.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/lakshyainstitute" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Course.html">Courses</a></li>
+          <li><a href="Notebook.html">Notebooks</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul style="color: var(--text-secondary);">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="fas fa-map-marker-alt"
+              style="margin-top: 4px; color: var(--accent-color);"></i> Near SBI Bank Kurebhar Sultanpur Road</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-envelope"
+              style="color: var(--accent-color);"></i> lcisln01@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lakshya Computer Institute. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Sidebar Toggle
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const notesSidebar = document.getElementById('notesSidebar');
+      const toggleIcon = sidebarToggle.querySelector('i');
+
+      sidebarToggle.addEventListener('click', () => {
+        notesSidebar.classList.toggle('show');
+        if (notesSidebar.classList.contains('show')) {
+          toggleIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+          toggleIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+      });
+
+      // Table of Contents Highlight via Intersection Observer
+      const sections = document.querySelectorAll('.scroll-target');
+      const navLinks = document.querySelectorAll('.toc-link');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Trigger when heading reaches near top
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            // Remove active from all
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add active to current
+            const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Smooth scroll for TOC links
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Offset for fixed header
+              behavior: 'smooth'
+            });
+            if (window.innerWidth <= 992) {
+              notesSidebar.classList.remove('show');
+              toggleIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+

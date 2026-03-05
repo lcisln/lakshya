@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Online Exams - Lakshya Computer Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/fevicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Specific Styles (Inherited from global style.css) -->
+  <style>
+    .exam-card {
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Lakshya Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownBtn">Course <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Course.html" class="dropdown-item">Basic Course</a>
+            <a href="Course.html" class="dropdown-item">Intermediate Course</a>
+            <a href="Course.html" class="dropdown-item">Advance Course</a>
+          </div>
+        </div>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="Notebook.html" class="nav-link">Notebook</a>
+        <a href="contact.html" class="nav-link active">Contact us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="animated-theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero"
+    style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: #fff;">
+    <div class="container">
+      <h1 style="color: #fff; margin-bottom: 0;">Online Exams</h1>
+      <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; margin-top: 16px;">Test your knowledge and skills with
+        our mock tests.</p>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background-color: var(--bg-color);">
+    <div class="container">
+      <div class="grid-4 mb-5">
+        <div class="card exam-card reveal">
+          <i class="fas fa-laptop-code card-icon"></i>
+          <h4 class="card-title mb-3">Computer Fundamentals</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.1s;">
+          <i class="fas fa-file-word card-icon"></i>
+          <h4 class="card-title mb-3">Ms Word</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.2s;">
+          <i class="fas fa-file-excel card-icon"></i>
+          <h4 class="card-title mb-3">MS Excel</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.3s;">
+          <i class="fas fa-file-powerpoint card-icon"></i>
+          <h4 class="card-title mb-3">MS PowerPoint</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <!-- Row 2 -->
+        <div class="card exam-card reveal">
+          <i class="fas fa-globe card-icon"></i>
+          <h4 class="card-title mb-3">Internet</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.1s;">
+          <i class="fas fa-image card-icon"></i>
+          <h4 class="card-title mb-3">Photoshop</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.2s;">
+          <i class="fas fa-pen-nib card-icon"></i>
+          <h4 class="card-title mb-3">CorelDraw</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+        <div class="card exam-card reveal" style="transition-delay: 0.3s;">
+          <i class="fab fa-python card-icon"></i>
+          <h4 class="card-title mb-3">Python</h4>
+          <a href="#" class="btn btn-primary" onclick="alert('Exam platform coming soon!')">Start Test</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Lakshya Computer Institute</h3>
+        <p>Empowering Digital India. Providing quality education and practical training to build successful software and
+          IT careers.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/lakshyainstitute" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Course.html">Courses</a></li>
+          <li><a href="Notebook.html">Notebooks</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul style="color: var(--text-secondary);">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="fas fa-map-marker-alt"
+              style="margin-top: 4px; color: var(--accent-color);"></i> Near SBI Bank Kurebhar Sultanpur Road</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-envelope"
+              style="color: var(--accent-color);"></i> lcisln01@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lakshya Computer Institute. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Modal functionality completely removed for Exam page
+  </script>
+</body>
+
+</html>

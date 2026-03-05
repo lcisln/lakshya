@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses - Lakshya Computer Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/fevicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Course Specific Styles */
+    .search-filter {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      position: relative;
+    }
+
+    .search-filter input {
+      width: 100%;
+      padding: 16px 24px 16px 50px;
+      border-radius: 30px;
+      border: 2px solid var(--border-color);
+      font-size: 1.1rem;
+      background-color: var(--surface-color);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+
+    .search-filter input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .search-filter i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+
+    .course-card {
+      align-items: flex-start;
+      height: 100%;
+    }
+
+    .course-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: auto;
+      width: 100%;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .meta-item span:last-child {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      display: none;
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Lakshya Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle active" id="dropdownBtn">Course <i
+              class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Course.html" class="dropdown-item">Basic Course</a>
+            <a href="Course.html" class="dropdown-item">Intermediate Course</a>
+            <a href="Course.html" class="dropdown-item">Advance Course</a>
+          </div>
+        </div>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="Notebook.html" class="nav-link">Notebook</a>
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="animated-theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero"
+    style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: #fff;">
+    <div class="container">
+      <h1 style="color: #fff; margin-bottom: 0;">Our Courses</h1>
+      <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; margin-top: 16px;">Find the perfect course to kickstart
+        your career.</p>
+    </div>
+  </section>
+
+  <!-- Courses List Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Search Filter -->
+      <div class="search-filter reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="courseSearch" placeholder="Search courses by name or duration...">
+      </div>
+
+      <div class="grid-3" id="courseGrid">
+        <!-- Result empty state -->
+        <div class="no-results" id="noResultsMsg">No courses found matching your search.</div>
+
+        <!-- Course 1 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">ADCA Plus</h3>
+          <p class="card-desc">Advanced Diploma in Computer Application Plus.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>15 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹8,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">ADCA</h3>
+          <p class="card-desc">Advanced Diploma in Computer Application.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>12 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹6,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">DCA</h3>
+          <p class="card-desc">Diploma in Computer Application.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>6 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹3,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">DFA</h3>
+          <p class="card-desc">Diploma in Financial Accounting.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>6 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹3,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">CCC</h3>
+          <p class="card-desc">Course on Computer Concepts.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>3 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹3,000/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">O-Level</h3>
+          <p class="card-desc">NIELIT O-Level Certification.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>1 Year</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹15,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">Advance Excel</h3>
+          <p class="card-desc">Master MS Excel formulas, functions, and data analysis.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>3 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹3,000/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 8 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">Graphics Designing</h3>
+          <p class="card-desc">Learn Photoshop, CorelDraw, and digital design.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>6 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹8,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 9 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">Web Designing</h3>
+          <p class="card-desc">Learn HTML, CSS, JavaScript and responsive design.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>6 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹8,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 10 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">ADFA</h3>
+          <p class="card-desc">Advanced Diploma in Financial Accounting.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>12 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹7,000/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 11 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">Video Editing</h3>
+          <p class="card-desc">Professional video editing with Premiere Pro and After Effects.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>6 Months</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹16,500/-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 12 -->
+        <div class="card course-card reveal">
+          <h3 class="card-title">Animation and VFX</h3>
+          <p class="card-desc">Comprehensive training in 2D/3D animation and visual effects.</p>
+          <div class="course-meta">
+            <div class="meta-item">
+              <span><i class="far fa-clock"></i> Duration</span>
+              <span>2 Year</span>
+            </div>
+            <div class="meta-item">
+              <span><i class="fas fa-rupee-sign"></i> Amount</span>
+              <span>₹60,000/-</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top: 50px;">
+        <button class="btn btn-primary"
+          onclick="alert('Syllabus downloading functionality will be available soon.')">Explore Syllabus</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Lakshya Computer Institute</h3>
+        <p>Empowering Digital India. Providing quality education and practical training to build successful software and
+          IT careers.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/lakshyainstitute" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Course.html">Courses</a></li>
+          <li><a href="Notebook.html">Notebooks</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul style="color: var(--text-secondary);">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="fas fa-map-marker-alt"
+              style="margin-top: 4px; color: var(--accent-color);"></i> Near SBI Bank Kurebhar Sultanpur Road</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-envelope"
+              style="color: var(--accent-color);"></i> lcisln01@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lakshya Computer Institute. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live Search Filter Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('courseSearch');
+      const cards = document.querySelectorAll('.course-card');
+      const noResultsMsg = document.getElementById('noResultsMsg');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function (e) {
+          const query = e.target.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const duration = card.querySelector('.meta-item:nth-child(1) span:last-child').textContent.toLowerCase();
+
+            if (title.includes(query) || duration.includes(query)) {
+              card.style.display = 'flex';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (visibleCount === 0) {
+            noResultsMsg.style.display = 'block';
+          } else {
+            noResultsMsg.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

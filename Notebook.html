@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Notebooks - Lakshya Computer Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/fevicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Specific Styles */
+    .search-filter {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      position: relative;
+    }
+
+    .search-filter input {
+      width: 100%;
+      padding: 16px 24px 16px 50px;
+      border-radius: 30px;
+      border: 2px solid var(--border-color);
+      font-size: 1.1rem;
+      background-color: var(--surface-color);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+
+    .search-filter input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .search-filter i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      display: none;
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+
+    /* Wrap cards in a link for UX, removing default a styles */
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+
+    .card-link:hover {
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Lakshya Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownBtn">Course <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Course.html" class="dropdown-item">Basic Course</a>
+            <a href="Course.html" class="dropdown-item">Intermediate Course</a>
+            <a href="Course.html" class="dropdown-item">Advance Course</a>
+          </div>
+        </div>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="Notebook.html" class="nav-link active">Notebook</a>
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="animated-theme-toggle" aria-label="Toggle Dark Mode">
+          <div class="toggle-track">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero"
+    style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: #fff;">
+    <div class="container">
+      <h1 style="color: #fff; margin-bottom: 0;">Student Notebooks</h1>
+      <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; margin-top: 16px;">Access study materials and practical
+        guides for your courses.</p>
+    </div>
+  </section>
+
+  <!-- Notebooks List Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Search Filter -->
+      <div class="search-filter reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="notebookSearch" placeholder="Search notebooks by topic...">
+      </div>
+
+      <div class="grid-4 mb-5" id="notebookGrid">
+        <!-- Result empty state -->
+        <div class="no-results" id="noResultsMsg">No notebooks found matching your search.</div>
+
+        <!-- Notebook 1 -->
+        <a href="Computer_fundamantal.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal">
+            <img src="https://cdn-icons-png.flaticon.com/128/3749/3749784.png" alt="Fundamentals" class="card-icon">
+            <h4 class="card-title">Computer Fundamentals</h4>
+          </div>
+        </a>
+
+        <!-- Notebook 2 -->
+        <a href="ms_word.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.1s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/888/888883.png" alt="Ms Word" class="card-icon">
+            <h4 class="card-title">Ms Word</h4>
+          </div>
+        </a>
+
+        <!-- Notebook 3 -->
+        <a href="ms_excel.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.2s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/732/732220.png" alt="MS Excel" class="card-icon">
+            <h4 class="card-title">MS Excel</h4>
+          </div>
+        </a>
+
+        <!-- Notebook 4 -->
+        <a href="ms_powerpoint.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.3s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/888/888874.png" alt="PowerPoint" class="card-icon">
+            <h4 class="card-title">MS PowerPoint</h4>
+          </div>
+        </a>
+
+        <!-- Row 2 -->
+        <a href="internet.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal">
+            <img src="https://cdn-icons-png.flaticon.com/128/364/364089.png" alt="Internet" class="card-icon">
+            <h4 class="card-title">Internet</h4>
+          </div>
+        </a>
+
+        <a href="photoshop.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.1s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968520.png" alt="Photoshop" class="card-icon">
+            <h4 class="card-title">Photoshop</h4>
+          </div>
+        </a>
+
+        <a href="coreldraw.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.2s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/17471/17471642.png" alt="CorelDraw" class="card-icon">
+            <h4 class="card-title">CorelDraw</h4>
+          </div>
+        </a>
+
+        <a href="python.html" class="card-link notebook-wrapper">
+          <div class="card notebook-card reveal" style="transition-delay: 0.3s;">
+            <img src="https://cdn-icons-png.flaticon.com/128/3098/3098090.png" alt="Python" class="card-icon">
+            <h4 class="card-title">Python</h4>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Lakshya Computer Institute</h3>
+        <p>Empowering Digital India. Providing quality education and practical training to build successful software and
+          IT careers.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/lakshyainstitute" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/lakshyacomputer" class="social-icon" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Course.html">Courses</a></li>
+          <li><a href="Notebook.html">Notebooks</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul style="color: var(--text-secondary);">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="fas fa-map-marker-alt"
+              style="margin-top: 4px; color: var(--accent-color);"></i> Near SBI Bank Kurebhar Sultanpur Road</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-envelope"
+              style="color: var(--accent-color);"></i> lcisln01@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lakshya Computer Institute. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live Search Filter Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('notebookSearch');
+      const wrappers = document.querySelectorAll('.notebook-wrapper');
+      const noResultsMsg = document.getElementById('noResultsMsg');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function (e) {
+          const query = e.target.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          wrappers.forEach(wrapper => {
+            const title = wrapper.querySelector('.card-title').textContent.toLowerCase();
+
+            if (title.includes(query)) {
+              wrapper.style.display = 'block';
+              visibleCount++;
+            } else {
+              wrapper.style.display = 'none';
+            }
+          });
+
+          if (visibleCount === 0) {
+            noResultsMsg.style.display = 'block';
+          } else {
+            noResultsMsg.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
