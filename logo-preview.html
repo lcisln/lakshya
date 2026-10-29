@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAKSHYA - Pure Designer Typographic Wordmarks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #090d16;
+      color: #ffffff;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      text-align: center;
+      max-width: 850px;
+      margin-bottom: 3rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      max-width: 950px;
+      width: 100%;
+    }
+    .card {
+      background: #131b2e;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+    .card.featured {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .img-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: #050811;
+    }
+    .img-box.white {
+      background: #ffffff;
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .card-body {
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      background: #0f172a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-info {
+      flex: 1;
+      min-width: 280px;
+    }
+    .concept-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      color: #ffffff;
+    }
+    .concept-desc {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 0.75rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-download:hover {
+      background: #1d4ed8;
+    }
+    .back-link {
+      margin-top: 3.5rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Pure Typographic Wordmarks</div>
+    <h1>LAKSHYA <span>Designer Typography</span></h1>
+    <p>आपके निर्देशानुसार बिना किसी इमेज/आइकन के, केवल <strong>"LAKSHYA"</strong> नाम से 3 अलग-अलग अल्ट्रा-स्टाइलिश डिज़ाइनर वर्डमार्क तैयार किए गए हैं:</p>
+  </div>
+
+  <div class="grid">
+    <!-- Style 1 -->
+    <div class="card featured">
+      <div class="img-box">
+        <img src="images/wordmark-1.jpg" alt="Lakshya Designer Wordmark 1">
+      </div>
+      <div class="card-body">
+        <div class="card-info">
+          <div class="concept-title">Style 1: Geometric Metallic Cut Wordmark</div>
+          <p class="concept-desc">लेटर 'L', 'A', 'K', 'S', 'H', 'Y', 'A' में शार्प डायगोनल कट्स, मेटैलिक क्रोम बॉर्डर और इलेक्ट्रिक रॉयल ब्लू से सियान ग्रेडिएंट।</p>
+        </div>
+        <a href="images/wordmark-1.jpg" download="Lakshya_Wordmark_Style_1.jpg" class="btn-download">
+          Download Style 1
+        </a>
+      </div>
+    </div>
+
+    <!-- Style 2 -->
+    <div class="card">
+      <div class="img-box white">
+        <img src="images/wordmark-2.jpg" alt="Lakshya Designer Wordmark 2">
+      </div>
+      <div class="card-body">
+        <div class="card-info">
+          <div class="concept-title">Style 2: Clean Luxury Ribbon Typography (White Background)</div>
+          <p class="concept-desc">प्योर व्हाइट बैकग्राउंड पर फ्लोइंग रिबन कर्व्स, बोल्ड मॉडर्न लेटर्स और ग्लोबल टेक-ब्रांड एस्थेटिक।</p>
+        </div>
+        <a href="images/wordmark-2.jpg" download="Lakshya_Wordmark_Style_2.jpg" class="btn-download" style="background: #0284c7;">
+          Download Style 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Style 3 -->
+    <div class="card">
+      <div class="img-box">
+        <img src="images/wordmark-3.jpg" alt="Lakshya Designer Wordmark 3">
+      </div>
+      <div class="card-body">
+        <div class="card-info">
+          <div class="concept-title">Style 3: Speed Aerodynamic Neon Wordmark</div>
+          <p class="concept-desc">हल्का इटैलिक स्पीड एंगल, कॉबाल्ट ब्लू से नियॉन सियान ग्रेडिएंट, और आखिरी अक्षर 'A' की नोक पर गोल्डन स्टार स्पार्क।</p>
+        </div>
+        <a href="images/wordmark-3.jpg" download="Lakshya_Wordmark_Style_3.jpg" class="btn-download" style="background: #059669;">
+          Download Style 3
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a href="/" class="back-link">← वापस वेबसाइट पर जाएं (Back to Website)</a>
+
+</body>
+</html>
